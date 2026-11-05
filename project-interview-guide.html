@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud Analyst | Interview Project Guide</title>
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+:root { --ink:#242238; --muted:#6d6b7c; --purple:#7156d9; --pale:#f2efff; --line:#e8e5f1; --green:#237a59; }
+html,body { margin:0; padding:0; background:#eceaf2; color:var(--ink); font-family:"Segoe UI",Arial,sans-serif; font-size:10pt; line-height:1.48; }
+.page { width:210mm; min-height:297mm; margin:12mm auto; padding:17mm 19mm 18mm; background:#fff; position:relative; page-break-after:always; overflow:hidden; }
+.page:last-child { page-break-after:auto; }
+.topline { display:flex; align-items:center; justify-content:space-between; color:#858294; font-size:8pt; letter-spacing:.08em; text-transform:uppercase; border-bottom:1px solid var(--line); padding-bottom:9px; margin-bottom:19px; }
+.brand { display:flex; align-items:center; gap:8px; color:var(--ink); font-weight:700; letter-spacing:0; text-transform:none; font-size:10pt; }
+.brandmark { display:inline-grid; place-items:center; width:24px; height:24px; border-radius:8px; color:white; background:linear-gradient(140deg,#a18bfa,#7156d9); font-size:14px; }
+h1,h2,h3,p { margin-top:0; }
+h1 { font-size:31pt; line-height:1.08; letter-spacing:-.04em; margin:0 0 11px; }
+h2 { font-size:19pt; letter-spacing:-.025em; line-height:1.2; margin:0 0 12px; }
+h3 { font-size:11pt; margin:0 0 5px; }
+p { margin:0 0 9px; }
+.lead { color:var(--muted); font-size:12pt; max-width:620px; line-height:1.55; }
+.eyebrow { color:var(--purple); font-weight:700; font-size:8pt; letter-spacing:.13em; text-transform:uppercase; margin:0 0 9px; }
+.accent { color:var(--purple); }
+.hero { background:linear-gradient(135deg,#f6f3ff 0%,#fff 72%); border:1px solid #e8e2fb; border-radius:16px; padding:21px 23px; margin:19px 0 18px; }
+.quote { border-left:3px solid var(--purple); padding:11px 15px; background:#faf9ff; border-radius:0 9px 9px 0; color:#3e3a51; font-size:10.4pt; }
+.quote strong { color:var(--purple); }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+.card { border:1px solid var(--line); border-radius:10px; padding:12px 13px; background:#fff; }
+.card.tint { background:#faf9ff; }
+.card p:last-child { margin-bottom:0; }
+.small { color:var(--muted); font-size:8.7pt; }
+.pill { display:inline-block; padding:4px 8px; margin:2px 3px 2px 0; border-radius:20px; color:#5947a2; background:var(--pale); font-size:8pt; font-weight:600; }
+.section-label { margin:16px 0 7px; color:#827e90; text-transform:uppercase; letter-spacing:.1em; font-weight:700; font-size:8pt; }
+ul,ol { padding-left:19px; margin:5px 0 9px; }
+li { padding-left:2px; margin:3px 0; }
+strong { color:#302d40; }
+.flow { display:flex; align-items:stretch; gap:7px; margin:13px 0 15px; }
+.flow-item { flex:1; border:1px solid var(--line); border-radius:9px; background:#fbfaff; padding:10px 8px; text-align:center; }
+.flow-item b { display:block; font-size:9pt; margin-bottom:3px; }
+.flow-item span { display:block; color:var(--muted); font-size:7.7pt; }
+.arrow { align-self:center; color:#9b8bd5; font-weight:700; }
+.code { font-family:Consolas,"Courier New",monospace; color:#5947a2; background:#f4f1fc; padding:1px 4px; border-radius:4px; font-size:8.5pt; }
+.endpoint { display:grid; grid-template-columns:115px 1fr; gap:8px; align-items:start; border-bottom:1px solid var(--line); padding:8px 0; }
+.method { font-family:Consolas,monospace; font-size:8.5pt; font-weight:700; color:#4e3eaa; }
+.endpoint p { margin:0; color:var(--muted); font-size:9pt; }
+.qa { border-bottom:1px solid var(--line); padding:8px 0; }
+.qa:last-child { border-bottom:0; }
+.qa b { display:block; margin-bottom:3px; font-size:9.5pt; }
+.qa p { color:#5f5c6e; margin:0; font-size:9pt; }
+.callout { background:#fff9ed; border:1px solid #f1e4c9; border-radius:9px; padding:11px 13px; color:#6b5732; font-size:8.8pt; }
+.callout.green { background:#f2faf6; border-color:#d8eee2; color:#416d58; }
+.footer { position:absolute; bottom:10mm; left:19mm; right:19mm; display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-top:7px; color:#9996a3; font-size:7.5pt; }
+.kicker { font-weight:700; color:#877aaf; letter-spacing:.08em; font-size:8pt; }
+@media print { html,body { background:#fff; } .page { margin:0; box-shadow:none; } }
+</style>
+</head>
+<body>
+<section class="page">
+  <div class="topline"><div class="brand"><span class="brandmark">✦</span> Cloud Analyst</div><span>Interview project guide · 01</span></div>
+  <div class="hero">
+    <p class="eyebrow">AI · Data analytics · Full-stack</p>
+    <h1>Turn a spreadsheet<br>into a <span class="accent">conversation.</span></h1>
+    <p class="lead">A portfolio project that lets people upload tabular data and explore it by asking questions in everyday language.</p>
+  </div>
+  <p class="section-label">Your 45-second introduction</p>
+  <div class="quote">“I built <strong>Cloud Analyst</strong>, a full-stack AI data analysis app. A user uploads a CSV or Excel file, the backend loads it into a Pandas DataFrame, and then the user can ask questions in plain English. A LangChain dataframe agent uses a Groq-hosted language model and Python tools to compute answers from the data. The React interface presents the results in a chat experience with readable Markdown tables and lists. I focused on making data exploration accessible without requiring users to write SQL or Python.”</div>
+  <p class="section-label">Project at a glance</p>
+  <div class="grid3">
+    <div class="card tint"><h3>Problem</h3><p class="small">Non-technical users often need help extracting insights from spreadsheets.</p></div>
+    <div class="card tint"><h3>Solution</h3><p class="small">Upload a dataset and ask natural-language questions; get computed, structured responses.</p></div>
+    <div class="card tint"><h3>Audience</h3><p class="small">Analysts, students, and business users exploring small-to-medium tabular files.</p></div>
+  </div>
+  <p class="section-label">Technology stack</p>
+  <div><span class="pill">React 19</span><span class="pill">Vite</span><span class="pill">Flask</span><span class="pill">Pandas</span><span class="pill">LangChain</span><span class="pill">Groq API</span><span class="pill">Qwen model</span><span class="pill">React Markdown</span></div>
+  <p class="section-label">What it does today</p>
+  <div class="grid2">
+    <div class="card"><h3>Dataset upload</h3><p class="small">Accepts CSV and Excel formats, reads the file into Pandas, and returns row count, column count, names, and a five-row preview.</p></div>
+    <div class="card"><h3>Conversational analysis</h3><p class="small">Routes a question to a dataframe agent, executes calculations against the active DataFrame, and returns Markdown-formatted findings.</p></div>
+  </div>
+  <div class="footer"><span>Cloud Analyst · Project presentation notes</span><span>Overview</span></div>
+</section>
+
+<section class="page">
+  <div class="topline"><div class="brand"><span class="brandmark">✦</span> Cloud Analyst</div><span>System design · 02</span></div>
+  <p class="eyebrow">How the application works</p><h2>Architecture &amp; request flow</h2>
+  <p class="small">The browser handles the user experience; Flask handles file parsing and analysis; the model helps interpret questions and select dataframe operations.</p>
+  <div class="flow">
+    <div class="flow-item"><b>1 · React UI</b><span>Choose a file<br>Ask a question</span></div><div class="arrow">→</div>
+    <div class="flow-item"><b>2 · Flask API</b><span>Validate request<br>Parse CSV / Excel</span></div><div class="arrow">→</div>
+    <div class="flow-item"><b>3 · Pandas</b><span>Represent dataset<br>as a DataFrame</span></div><div class="arrow">→</div>
+    <div class="flow-item"><b>4 · Agent + LLM</b><span>Choose tools<br>Compute results</span></div><div class="arrow">→</div>
+    <div class="flow-item"><b>5 · Chat response</b><span>Return JSON<br>Render Markdown</span></div>
+  </div>
+  <p class="section-label">End-to-end explanation</p>
+  <ol>
+    <li><strong>Select and upload:</strong> The user selects a .csv, .xlsx, or .xls file. React sends it as multipart form data to <span class="code">POST /api/upload</span>.</li>
+    <li><strong>Validate and parse:</strong> Flask checks the filename and supported format, then uses Pandas to read the upload directly from memory without saving a CSV or Excel file to disk.</li>
+    <li><strong>Return dataset metadata:</strong> The API sends a JSON summary with the filename, row and column counts, column names, and a small preview. The UI displays the active dataset.</li>
+    <li><strong>Ask a question:</strong> React sends JSON containing the question to <span class="code">POST /api/query</span>. The server creates a dataframe agent for the active DataFrame.</li>
+    <li><strong>Compute and explain:</strong> The agent uses Python dataframe operations to calculate an answer. The LLM writes a concise response; Markdown is rendered in the chat.</li>
+  </ol>
+  <p class="section-label">Main API endpoints</p>
+  <div class="endpoint"><div class="method">GET /</div><p>Lightweight health check; returns a JSON status message.</p></div>
+  <div class="endpoint"><div class="method">POST /api/upload</div><p>Multipart upload; responds with dataset summary or a validation/parsing error.</p></div>
+  <div class="endpoint"><div class="method">DELETE /api/upload</div><p>Deletes the active in-memory dataset and clears its metadata.</p></div>
+  <div class="endpoint"><div class="method">POST /api/query</div><p>Accepts <span class="code">{"query":"..."}</span>; responds with the original question and the agent result.</p></div>
+  <p class="section-label">Why use an agent?</p>
+  <div class="card tint"><p class="small">A regular chat model may guess at numeric answers. The dataframe agent can call a Python tool that works against the actual DataFrame, then describe the result. The app’s prompt instructs it to avoid invented values and to use concise Markdown, key findings, and comparison tables when appropriate.</p></div>
+  <div class="footer"><span>Cloud Analyst · Project presentation notes</span><span>Architecture</span></div>
+</section>
+
+<section class="page">
+  <div class="topline"><div class="brand"><span class="brandmark">✦</span> Cloud Analyst</div><span>Implementation · 03</span></div>
+  <p class="eyebrow">Technical decisions</p><h2>What to highlight in the interview</h2>
+  <div class="grid2">
+    <div class="card"><h3>Why React + Vite?</h3><p class="small">React keeps upload, chat, loading, error, and dataset-summary UI state in focused components. Vite provides a quick local development server and production build.</p></div>
+    <div class="card"><h3>Why Flask?</h3><p class="small">The backend is a small JSON API that is straightforward to connect to the frontend. Flask-CORS enables local frontend/backend development across ports.</p></div>
+    <div class="card"><h3>Why Pandas?</h3><p class="small">Pandas provides familiar tabular operations and supports both CSV and Excel parsing. The DataFrame is the working representation for analysis.</p></div>
+    <div class="card"><h3>Why Markdown?</h3><p class="small">Markdown supports readable headings, emphasized results, bullet lists, and tables. React Markdown plus GFM turns model text into formatted chat content.</p></div>
+  </div>
+  <p class="section-label">Reliability and user experience</p>
+  <ul>
+    <li>Checks for missing files, empty filenames, unsupported formats, missing datasets, and blank questions.</li>
+    <li>Uses <span class="code">secure_filename</span> to sanitize uploaded filenames.</li>
+    <li>Shows upload/query loading states and surfaces API/network errors in the interface.</li>
+    <li>Displays a dataset preview and row/column metadata before users ask questions.</li>
+    <li>Uses a bounded model output length and a model available to the configured Groq account.</li>
+  </ul>
+  <p class="section-label">How to describe your contribution</p>
+  <div class="quote">“I connected a React chat interface to a Flask API, implemented file upload and tabular parsing with Pandas, integrated a LangChain dataframe agent with a hosted LLM, and improved response readability with structured Markdown. I also traced integration errors across the API, model, and UI and validated the complete flow with a sample CSV.”</div>
+  <p class="section-label">Demo plan (about 2 minutes)</p>
+  <ol>
+    <li>Introduce the problem: spreadsheet insights should not require writing code.</li>
+    <li>Upload a small sample CSV and point out its row count, columns, and preview.</li>
+    <li>Ask a concrete question tied to those columns, such as “Which category has the highest total?”</li>
+    <li>Show the direct answer, comparison table, and key findings.</li>
+    <li>Close with current limitations and one production improvement you would make next.</li>
+  </ol>
+  <div class="callout"><strong>Tip:</strong> Bring a small, clean sample CSV with obvious results. Confirm the API key is configured privately and both local servers start before the interview.</div>
+  <div class="footer"><span>Cloud Analyst · Project presentation notes</span><span>Implementation</span></div>
+</section>
+
+<section class="page">
+  <div class="topline"><div class="brand"><span class="brandmark">✦</span> Cloud Analyst</div><span>Interview Q&amp;A · 04</span></div>
+  <p class="eyebrow">Practice your answers</p><h2>Likely questions &amp; honest answers</h2>
+  <div class="qa"><b>What problem does the project solve?</b><p>It makes basic exploration of tabular files more accessible. Instead of writing a script for every question, a user can upload a file and ask for calculations or patterns in plain language.</p></div>
+  <div class="qa"><b>How do you make answers data-grounded?</b><p>The dataframe agent has a Python tool connected to the active Pandas DataFrame. It can calculate from the dataset rather than relying only on the language model’s memory. I still treat model output as something to verify, especially for consequential decisions.</p></div>
+  <div class="qa"><b>What happens if the user uploads an invalid file?</b><p>The server checks the request and extension, then Pandas attempts to parse the file. The API returns an error response, and the frontend displays the message. A production version should validate file size, content, and schema more thoroughly.</p></div>
+  <div class="qa"><b>How is the API key handled?</b><p>The key is loaded from an environment variable using dotenv and is not included in frontend code. For deployment, I would use a managed secret store, rotate keys, and make sure secrets never enter source control or logs.</p></div>
+  <div class="qa"><b>What are the current limitations?</b><p>The current backend stores the active DataFrame in a process-wide global variable, so it is a single-user/demo design and concurrent users could interfere. Uploads are stored on local disk, there are no user accounts or persistent chat sessions, and arbitrary code execution by the dataframe agent needs stronger isolation before production use.</p></div>
+  <div class="qa"><b>What would you improve next?</b><p>I would add per-user/session dataset storage, size and type limits, authentication and rate limiting, a sandboxed analysis worker, structured logging and tests, deployment configuration, and clearer controls for removing uploaded files. For large datasets, I would avoid loading everything into one in-memory DataFrame.</p></div>
+  <div class="qa"><b>How did you test it?</b><p>I tested the upload and query endpoints with a temporary sample CSV, verified the response status and calculated result, and ran a production build of the frontend. The next step is adding automated unit and integration tests to make those checks repeatable.</p></div>
+  <p class="section-label">A thoughtful closing statement</p>
+  <div class="callout green">“This is a working prototype focused on a clear user workflow. I understand the difference between a demo and a production-ready analytics service, especially around isolation, multi-user state, file security, and observability. Those are the first areas I would address as I scale it.”</div>
+  <p class="section-label">Project files to recognize</p>
+  <div class="grid2">
+    <div class="card"><p class="small"><strong>Frontend:</strong> <span class="code">frontend/my-react-app/src/App.jsx</span><br>Chat, upload, state, Markdown UI</p></div>
+    <div class="card"><p class="small"><strong>Backend:</strong> <span class="code">backend/uploads/app.py</span><br>Flask routes, parsing, model/agent setup</p></div>
+  </div>
+  <div class="footer"><span>Cloud Analyst · Project presentation notes</span><span>Q&amp;A</span></div>
+</section>
+
+<section class="page">
+  <div class="topline"><div class="brand"><span class="brandmark">✦</span> Cloud Analyst</div><span>Question bank · 05</span></div>
+  <p class="eyebrow">Try these after uploading a dataset</p><h2>Data questions to ask the AI</h2>
+  <p class="small">Pick a prompt that fits your file. Replace bracketed words with real column names or values from your dataset. Ask one clear question at a time for the best result.</p>
+  <div class="grid2">
+    <div class="card tint"><h3>1 · Understand the dataset</h3><ul>
+      <li>Summarize this dataset in plain English.</li>
+      <li>How many rows and columns are there?</li>
+      <li>What does each column appear to represent?</li>
+      <li>Show a few representative records.</li>
+      <li>Which columns look numeric, categorical, or date-based?</li>
+    </ul></div>
+    <div class="card tint"><h3>2 · Check data quality</h3><ul>
+      <li>Which columns contain missing values?</li>
+      <li>Are there duplicate rows?</li>
+      <li>Find unusual or potentially invalid values.</li>
+      <li>Are any columns formatted inconsistently?</li>
+      <li>What should I clean before analyzing this data?</li>
+    </ul></div>
+    <div class="card"><h3>3 · Totals and averages</h3><ul>
+      <li>What is the total [sales/revenue/amount]?</li>
+      <li>What is the average, median, minimum, and maximum of [column]?</li>
+      <li>How many records are in each [category]?</li>
+      <li>What percentage of the total comes from each category?</li>
+      <li>Calculate the overall [metric] by [group].</li>
+    </ul></div>
+    <div class="card"><h3>4 · Rankings and comparisons</h3><ul>
+      <li>Which [product/region/person] has the highest [metric]?</li>
+      <li>Show the top 5 and bottom 5 [categories] by [metric].</li>
+      <li>Compare the average [metric] across [groups].</li>
+      <li>Which category has the largest share of the total?</li>
+      <li>Sort the [categories] from highest to lowest [metric].</li>
+    </ul></div>
+    <div class="card"><h3>5 · Trends over time</h3><ul>
+      <li>How does [metric] change over time?</li>
+      <li>Group [sales/events] by month and summarize the total.</li>
+      <li>Which month or date has the highest [metric]?</li>
+      <li>Compare this year with last year, if both are in the data.</li>
+      <li>Are there noticeable seasonal patterns in the dates provided?</li>
+    </ul></div>
+    <div class="card"><h3>6 · Relationships and patterns</h3><ul>
+      <li>Which numeric columns appear related?</li>
+      <li>Does [metric] differ across [category]?</li>
+      <li>Are higher [X] values associated with higher [Y] values?</li>
+      <li>Point out notable clusters or outliers in [column].</li>
+      <li>What are three interesting patterns in this dataset?</li>
+    </ul></div>
+    <div class="card"><h3>7 · Focused business questions</h3><ul>
+      <li>Which [products] contribute most to [revenue/profit]?</li>
+      <li>Which [region/team] has the lowest [performance measure]?</li>
+      <li>What changed most between [group A] and [group B]?</li>
+      <li>Which records meet [condition]?</li>
+      <li>What practical next steps does this data suggest?</li>
+    </ul></div>
+    <div class="card"><h3>8 · Ask for a clear presentation</h3><ul>
+      <li>Give me the answer first, then list the key findings.</li>
+      <li>Show the comparison as a Markdown table.</li>
+      <li>Explain the calculation in simple terms.</li>
+      <li>Include the values you used and state any assumptions.</li>
+      <li>If the dataset cannot answer this, tell me what is missing.</li>
+    </ul></div>
+  </div>
+  <div class="callout" style="margin-top:12px"><strong>Good question formula:</strong> “Calculate <em>[metric]</em> grouped by <em>[category or date]</em>, compare the top results, and summarize the main finding.” Avoid treating correlation or patterns as proof that one thing caused another.</div>
+  <div class="footer"><span>Cloud Analyst · Project presentation notes</span><span>Question bank</span></div>
+</section>
+</body>
+</html>

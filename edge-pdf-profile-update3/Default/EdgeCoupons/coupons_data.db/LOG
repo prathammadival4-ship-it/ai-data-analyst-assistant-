@@ -1,0 +1,5 @@
+2026/10/31-20:09:54.561 40d8 Creating DB C:\Users\DELL\Desktop\ai data anlytic\edge-pdf-profile-update3\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/10/31-20:09:54.577 40d8 Reusing MANIFEST C:\Users\DELL\Desktop\ai data anlytic\edge-pdf-profile-update3\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/10/31-20:09:55.179 41a4 Level-0 table #5: started
+2026/10/31-20:09:55.190 41a4 Level-0 table #5: 683273 bytes OK
+2026/10/31-20:09:55.196 41a4 Delete type=0 #3

@@ -1,0 +1,5 @@
+:root { font-family: 'DM Sans', 'Segoe UI', sans-serif; color: #20232c; background: #fff; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-optical-sizing: auto; font-weight: 400; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 340px; min-height: 100vh; }
+#root { min-height: 100vh; }
+button, input, textarea { font: inherit; }

@@ -1,0 +1,11 @@
+2026-10-31 14:39:51.747: [INFO] CurrentProfilePath: C:\Users\DELL\Desktop\ai data anlytic\edge-pdf-profile-update3\Default
+2026-10-31 14:39:51.747: [INFO] Profiles total count: 1
+2026-10-31 14:39:51.747: [INFO] Profile: name=Profile 1 path=C:\Users\DELL\Desktop\ai data anlytic\edge-pdf-profile-update3\Default lastActive=2026-10-31T14:39:51.710Z
+2026-10-31 14:39:51.747: [INFO] LastUsedProfileDir: C:\Users\DELL\Desktop\ai data anlytic\edge-pdf-profile-update3\Default
+2026-10-31 14:39:51.748: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\DELL\Desktop\ai data anlytic\edge-pdf-profile-update3\Default lastActive=2026-10-31T14:39:51.710Z
+2026-10-31 14:39:51.748: [INFO] OnDoneLoading sync enabled: 0
+2026-10-31 14:39:51.748: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-31 14:39:51.748: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-31 14:39:51.748: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-31 14:39:51.866: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-31 14:39:52.244: [INFO] VisibilityChanged: 0
